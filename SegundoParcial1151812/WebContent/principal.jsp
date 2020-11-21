@@ -36,7 +36,8 @@
 					<img src="<c:out value="${tienda.imagen}"/>">
 					<h4><c:out value="${tienda.nombre}"/></h4>
 					<label><c:out value="${tienda.lema}"/></label>
-							
+					
+					<a href="https://www.facebook.com/">FaceBook</a>				
 						
 					
 				
