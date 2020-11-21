@@ -16,6 +16,7 @@ public class TEST {
 		
 		Tienda tienda= new Tienda(0,"123","Camisas Elegantes","elegantes@gmail.com","www.facebook.com","https://www.culturadigital.cl/wp/wp-content/uploads/2008/08/autor-portada.jpg","lema1","n1","Reinaldo SALAZAR","www.google.com");
 		tiendaDao.insert(tienda);
+		
 	
 		
 	}
