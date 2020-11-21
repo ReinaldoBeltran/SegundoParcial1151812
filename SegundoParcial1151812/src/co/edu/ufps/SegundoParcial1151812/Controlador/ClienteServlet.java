@@ -14,6 +14,7 @@ import javax.servlet.http.HttpServletResponse;
 import co.edu.ufps.SegundoParcial1151812.DAO.ClienteDAO;
 
 import co.edu.ufps.SegundoParcial1151812.model.Cliente;
+import co.edu.ufps.SegundoParcial1151812.model.Tienda;
 
 /**
  * Servlet implementation class ClienteServlet
@@ -57,13 +58,9 @@ String action=request.getParameter("action");
 			validarLogin(request, response);			
 			break;
 			
-		case "borrarEmpleado":
-			//borrarEmpleado(request,response);
-			break;
 		
-        case "editar":
-            //editarEmpleado(request, response);
-            break; 
+		
+        
        
 	
 		default: 
@@ -129,6 +126,7 @@ String action=request.getParameter("action");
 		
 		        
 		    }
+
 	
 	
 

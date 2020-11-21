@@ -11,8 +11,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-
+import co.edu.ufps.SegundoParcial1151812.DAO.ServicioDAO;
 import co.edu.ufps.SegundoParcial1151812.DAO.TiendaDAO;
+import co.edu.ufps.SegundoParcial1151812.model.Servicio;
 import co.edu.ufps.SegundoParcial1151812.model.Tienda;
 
 /**
@@ -22,7 +23,7 @@ import co.edu.ufps.SegundoParcial1151812.model.Tienda;
 public class TiendaServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	TiendaDAO tiendaDao;
-       
+     ServicioDAO servicio;  
     /**
      * @see HttpServlet#HttpServlet()
      */
@@ -32,6 +33,7 @@ public class TiendaServlet extends HttpServlet {
     }
     public void init() {
 		tiendaDao = new TiendaDAO();
+		servicio= new ServicioDAO();
 	    }
 
 	/**
@@ -50,13 +52,9 @@ String action=request.getParameter("action");
 		case "buscar":
 			//buscar(request,response);
 			break;
-		case "formularioRegistro":
-			//formularioRegistro(request,response);
-			break;
-			
-		case "formularioBuscar":
-			//formularioBuscar(request, response);			
-			break;
+		case "listarServicios":
+            listarServicios(request, response);
+            break; 
 			
 		case "borrarEmpleado":
 			//borrarEmpleado(request,response);
@@ -118,6 +116,12 @@ private void registrarTienda(HttpServletRequest request, HttpServletResponse res
 	        response.sendRedirect("index.jsp");     
 		      
 	    }
-
+private void listarServicios(HttpServletRequest request, HttpServletResponse response) throws SQLException, IOException , ServletException{
+	
+	List<Servicio> listarServices= servicio.list();
+	request.setAttribute("listaS", listarServices);	
+	RequestDispatcher dispatcher = request.getRequestDispatcher("servicios.jsp");
+	dispatcher.forward(request, response);
+}
 
 }

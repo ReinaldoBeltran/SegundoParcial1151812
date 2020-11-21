@@ -37,7 +37,11 @@
 					<h4><c:out value="${tienda.nombre}"/></h4>
 					<label><c:out value="${tienda.lema}"/></label>
 					
-					<a href="https://www.facebook.com/">FaceBook</a>				
+					<a href="https://www.facebook.com/">FaceBook</a>	
+					
+					<form action="TiendaServlet?action=listarServicios" method="post">
+					<button  type="submit"  class="btn btn-primary">Servicios</button>
+					</form>	
 						
 					
 				
